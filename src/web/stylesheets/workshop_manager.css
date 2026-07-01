@@ -19,36 +19,61 @@
   font-weight: normal;
   font-style: normal; }
 
+:root {
+  --ofmeet-bg: #f0f2f5;
+  --ofmeet-surface: #ffffff;
+  --ofmeet-primary: #2A3A4B;
+  --ofmeet-accent: #FF6600;
+  --ofmeet-accent-hover: #e55c00;
+  --ofmeet-border: #d8dde6;
+  --ofmeet-text-muted: #5c6678;
+}
+
 body, .button {
   font-family: 'open_sansregular'; }
 
 body {
-  background: lightgray; }
+  background: var(--ofmeet-bg); }
 
 #workshop_manager {
-  background: white; }
+  background: var(--ofmeet-surface);
+  border-radius: 8px;
+  box-shadow: 0 1px 3px rgba(42, 58, 75, 0.08); }
   #workshop_manager a {
-    font-family: 'open_sansbold'; }
+    font-family: 'open_sansbold';
+    color: var(--ofmeet-accent); }
+  #workshop_manager a:hover {
+    color: var(--ofmeet-accent-hover); }
   #workshop_manager h1, #workshop_manager h2, #workshop_manager h3, #workshop_manager h4, #workshop_manager h5, #workshop_manager h6 {
-    font-family: 'open_sansbold'; }
+    font-family: 'open_sansbold';
+    color: var(--ofmeet-primary); }
   #workshop_manager .app_row {
     margin: 0 5px; }
   #workshop_manager .new_button {
     margin-top: 10px; }
+  #workshop_manager .button {
+    background: var(--ofmeet-accent);
+    border-color: var(--ofmeet-accent);
+    border-radius: 6px;
+    transition: background 0.15s ease; }
+  #workshop_manager .button:hover {
+    background: var(--ofmeet-accent-hover);
+    border-color: var(--ofmeet-accent-hover); }
   #workshop_manager .button .fa {
     padding-right: 5px; }
   #workshop_manager .workshop_manager_dialog {
-    border: solid 1px white;
+    border: solid 1px var(--ofmeet-border);
     padding: 20px 30px 0 30px;
-    border-radius: 0;
-    background: white; }
+    border-radius: 8px;
+    background: var(--ofmeet-surface);
+    box-shadow: 0 8px 24px rgba(42, 58, 75, 0.12); }
     #workshop_manager .workshop_manager_dialog .ui-dialog-content {
       padding: 0; }
     #workshop_manager .workshop_manager_dialog .ui-dialog-titlebar {
       display: none; }
   #workshop_manager .ui-widget-overlay {
     opacity: 1;
-    background: rgba(0, 0, 0, 0.5); }
+    background: rgba(30, 42, 56, 0.55); }
   #workshop_manager #event_input {
     overflow: visible; }
     #workshop_manager #event_input .button {
@@ -60,38 +85,41 @@ body {
       display: none; }
     #workshop_manager #event_input textarea {
       height: 100px;
-      resize: none; }
+      resize: none;
+      border-radius: 6px;
+      border-color: var(--ofmeet-border); }
   #workshop_manager #event_calendar table {
     border: none; }
   #workshop_manager #event_calendar .fc-header {
     margin-bottom: -5px;
     border: none; }
     #workshop_manager #event_calendar .fc-header .fc-header-title > h2 {
-      font-size: 1rem !important; }
+      font-size: 1rem !important;
+      color: var(--ofmeet-primary); }
   #workshop_manager #event_calendar .fc-widget-content, #workshop_manager #event_calendar .fc-widget-header {
-    border-color: rgba(0, 2, 93, 0.3);
-    background: white; }
+    border-color: var(--ofmeet-border);
+    background: var(--ofmeet-surface); }
   #workshop_manager #event_calendar .fc-event {
-    border-radius: 0 !important;
-    border: 2px solid rgba(0, 0, 0, 0);
+    border-radius: 4px !important;
+    border: 2px solid transparent;
     padding: 5px 1px;
-    background: #ff7f00; }
+    background: var(--ofmeet-accent); }
     #workshop_manager #event_calendar .fc-event.selected {
-      border-color: #00005d; }
+      border-color: var(--ofmeet-primary); }
     #workshop_manager #event_calendar .fc-event.workshop {
-      background: rgba(228, 26, 28, 0.8); }
+      background: rgba(228, 26, 28, 0.85); }
       #workshop_manager #event_calendar .fc-event.workshop.selected {
         background: #e41a1c; }
     #workshop_manager #event_calendar .fc-event.open_shop {
-      background: rgba(55, 126, 184, 0.8); }
+      background: rgba(42, 58, 75, 0.85); }
       #workshop_manager #event_calendar .fc-event.open_shop.selected {
-        background: #377eb8; }
+        background: var(--ofmeet-primary); }
     #workshop_manager #event_calendar .fc-event.tour {
-      background: rgba(77, 175, 74, 0.8); }
+      background: rgba(77, 175, 74, 0.85); }
       #workshop_manager #event_calendar .fc-event.tour.selected {
         background: #4daf4a; }
     #workshop_manager #event_calendar .fc-event.misc {
-      background: rgba(152, 78, 163, 0.8); }
+      background: rgba(152, 78, 163, 0.85); }
       #workshop_manager #event_calendar .fc-event.misc.selected {
         background: #984ea3; }
   #workshop_manager #event_calendar .fc-event-inner {
@@ -99,11 +127,16 @@ body {
   #workshop_manager #event_calendar .fc-event-time {
     display: none; }
   #workshop_manager #event_calendar .fc-button {
-    border-radius: 0;
-    background: none;
-    box-shadow: none; }
+    border-radius: 6px;
+    background: var(--ofmeet-surface);
+    border-color: var(--ofmeet-border);
+    box-shadow: none;
+    color: var(--ofmeet-primary); }
+  #workshop_manager #event_calendar .fc-button:hover {
+    background: #f7f9fc; }
   #workshop_manager .event_details .details_groups, details_users, #workshop_manager .event_details .details_cost {
     font-family: 'open_sansitalic';
+    color: var(--ofmeet-text-muted);
     padding-top: 10px; }
   #workshop_manager .event_details .details_description {
     padding-top: 10px; }
@@ -122,8 +155,9 @@ body {
       padding: 0; }
 
 .right-off-canvas-menu {
-  background: white;
-  padding-left: 10px; }
+  background: var(--ofmeet-surface);
+  padding-left: 10px;
+  box-shadow: -2px 0 8px rgba(42, 58, 75, 0.08); }
 
 .move-left .exit-off-canvas {
   box-shadow: none; }
